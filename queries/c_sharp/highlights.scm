@@ -31,7 +31,7 @@
   name: [(qualified_name) (identifier)] @namespace)
 
 (qualified_name
-  (identifier) @type)
+  (identifier) @variable)
 
 (invocation_expression
       (identifier) @method.call)
@@ -43,7 +43,7 @@
 
 (initializer_expression
   (assignment_expression
-    left: (identifier) @field))
+    left: (identifier) @variable))
 
 (parameter_list
   (parameter
@@ -77,7 +77,7 @@
 (comment) @comment @spell
 
 (using_directive
-  (identifier) @type)
+  (identifier) @variable)
 
 (property_declaration
   name: (identifier) @property)
@@ -92,15 +92,15 @@
   type: (identifier) @type)
 
 (interface_declaration
-  name: (identifier) @type)
+  name: (identifier) @function)
 (class_declaration
-  name: (identifier) @type)
+  name: (identifier) @function)
 (record_declaration
   name: (identifier) @type)
 (enum_declaration
   name: (identifier) @type)
 (constructor_declaration
-  name: (identifier) @constructor)
+  name: (identifier) @function)
 (constructor_initializer [
   "base" @constructor
 ])
@@ -121,7 +121,7 @@
 
 (base_list
   (generic_name
-    (identifier) @type))
+    (identifier) @function))
 
 (type_constraint
   (generic_name
@@ -149,7 +149,7 @@
       (identifier) @method)))
 
 (base_list
-  (identifier) @type)
+  (identifier) @function)
 
 (type_argument_list
  (identifier) @type)
